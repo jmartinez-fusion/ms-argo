@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ms-organization
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ms-organization
+  template:
+    metadata:
+      labels:
+        app: ms-organization
+    spec:
+      containers:
+        - name: ms-organization
+          envFrom:
+            - secretRef:
+                name: organization-secret
+            - secretRef:
+                name: db-secret
+          image: jmartinezblanco/meta-ms-organization
+          ports:
+            - containerPort: 3000
+              protocol: TCP

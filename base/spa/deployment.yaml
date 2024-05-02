@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ms-spa
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ms-spa
+  template:
+    metadata:
+      labels:
+        app: ms-spa
+    spec:
+      containers:
+      - image: jmartinezblanco/meta-spa
+        imagePullPolicy: Always
+        name: ms-spa
+        ports:
+        - containerPort: 8080
+          protocol: TCP
+        envFrom: 
+          - secretRef:
+              name: spa-secret
+        resources: {}

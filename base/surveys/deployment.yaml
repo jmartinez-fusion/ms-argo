@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ms-surveys
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ms-surveys
+  template:
+    metadata:
+      labels:
+        app: ms-surveys
+    spec:
+      containers:
+        - name: ms-surveys
+          envFrom:
+            - secretRef:
+                name: surveys-secret
+            - secretRef:
+                name: db-secret
+          image: jmartinezblanco/meta-ms-surveys
+          ports:
+            - containerPort: 3000
+              protocol: TCP

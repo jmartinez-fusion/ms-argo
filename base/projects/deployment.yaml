@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ms-projects
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ms-projects
+  template:
+    metadata:
+      labels:
+        app: ms-projects
+    spec:
+      containers:
+        - name: ms-projects
+          envFrom:
+            - secretRef:
+                name: projects-secret
+            - secretRef:
+                name: db-secret
+          image: jmartinezblanco/meta-ms-projects
+          ports:
+            - containerPort: 3000
+              protocol: TCP

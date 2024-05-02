@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ms-auth
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ms-auth
+  template:
+    metadata:
+      labels:
+        app: ms-auth
+    spec:
+      containers:
+        - name: ms-auth
+          envFrom:
+            - secretRef:
+                name: auth-secret
+            - secretRef:
+                name: db-secret
+          image: jmartinezblanco/meta-ms-auth
+          ports:
+            - containerPort: 3000
+              protocol: TCP
