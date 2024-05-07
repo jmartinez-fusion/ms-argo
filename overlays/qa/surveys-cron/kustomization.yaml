@@ -10,4 +10,4 @@ generatorOptions:
   disableNameSuffixHash: true
 
 resources:
-  - "../../../base/surveys"
+  - "../../../base/surveys-cron"
