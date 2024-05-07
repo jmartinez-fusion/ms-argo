@@ -12,6 +12,8 @@ spec:
       labels:
         app: ms-projects
     spec:
+      imagePullSecrets:
+      - name: oci-registry
       containers:
         - name: ms-projects
           envFrom:
@@ -21,7 +23,7 @@ spec:
                 name: db-secret
             - secretRef:
                 name: minio-secret
-          image: jmartinezblanco/meta-ms-projects
+          image: iad.ocir.io/idwwmbyiyhww/meta-ms-projects:latest
           ports:
             - containerPort: 3000
               protocol: TCP

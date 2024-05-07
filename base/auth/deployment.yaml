@@ -12,6 +12,8 @@ spec:
       labels:
         app: ms-auth
     spec:
+      imagePullSecrets:
+      - name: oci-registry
       containers:
         - name: ms-auth
           envFrom:
@@ -19,7 +21,7 @@ spec:
                 name: auth-secret
             - secretRef:
                 name: db-secret
-          image: jmartinezblanco/meta-ms-auth
+          image: iad.ocir.io/idwwmbyiyhww/meta-ms-auth:latest
           ports:
             - containerPort: 3000
               protocol: TCP

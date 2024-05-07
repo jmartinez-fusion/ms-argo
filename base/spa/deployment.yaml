@@ -12,8 +12,10 @@ spec:
       labels:
         app: ms-spa
     spec:
+      imagePullSecrets:
+      - name: oci-registry
       containers:
-      - image: jmartinezblanco/meta-spa
+      - image: iad.ocir.io/idwwmbyiyhww/meta-spa:latest
         imagePullPolicy: Always
         name: ms-spa
         ports:

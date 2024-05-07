@@ -12,6 +12,8 @@ spec:
       labels:
         app: ms-process
     spec:
+      imagePullSecrets:
+      - name: oci-registry
       containers:
         - name: ms-process
           envFrom:
@@ -21,7 +23,7 @@ spec:
                 name: db-secret
             - secretRef:
                 name: minio-secret
-          image: jmartinezblanco/meta-ms-process
+          image: iad.ocir.io/idwwmbyiyhww/meta-ms-process:latest
           ports:
             - containerPort: 3000
               protocol: TCP

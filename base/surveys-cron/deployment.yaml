@@ -12,6 +12,8 @@ spec:
       labels:
         app: ms-surveys-cron
     spec:
+      imagePullSecrets:
+      - name: oci-registry
       containers:
         - name: ms-surveys-cron
           envFrom:
@@ -19,7 +21,7 @@ spec:
                 name: surveys-cron-secret
             - secretRef:
                 name: db-secret
-          image: jmartinezblanco/meta-ms-surveys
+          image: iad.ocir.io/idwwmbyiyhww/meta-ms-surveys:latest
           ports:
             - containerPort: 3000
               protocol: TCP
