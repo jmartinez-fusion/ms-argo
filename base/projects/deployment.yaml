@@ -19,6 +19,8 @@ spec:
                 name: projects-secret
             - secretRef:
                 name: db-secret
+            - secretRef:
+                name: minio-secret
           image: jmartinezblanco/meta-ms-projects
           ports:
             - containerPort: 3000
