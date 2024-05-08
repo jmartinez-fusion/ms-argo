@@ -16,7 +16,7 @@ jobs:
         envkey_SOME_API_KEY: "123456abcdef"
         envkey_DB_NAME: ${{ secrets.DB_NAME }}
         some_other_variable: foobar
-        directory: ./overlays/qa/auth
+        directory: overlays/qa/auth
         file_name: db.env
         fail_on_empty: false
         sort_keys: false
