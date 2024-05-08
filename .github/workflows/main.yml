@@ -14,10 +14,9 @@ jobs:
       with:
         envkey_DEBUG: false
         envkey_SOME_API_KEY: "123456abcdef"
-        envkey_SECRET_KEY: ${{ secrets.DB_NAME }}
-        envkey_VARIABLE: ${{ vars.DB_HOST}}
+        envkey_DB_NAME: ${{ secrets.DB_NAME }}
         some_other_variable: foobar
-        #directory: <directory_name>
-        file_name: .env
+        directory: /overlays/qa/auth
+        file_name: db.env
         fail_on_empty: false
         sort_keys: false
