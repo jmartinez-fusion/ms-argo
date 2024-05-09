@@ -1,13 +1,6 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
-secretGenerator:
-  - name: auth-secret
-    envs:
-      - env.properties
-  - name: minio-secret
-    envs:
-      - minio.env
 
 generatorOptions:
   disableNameSuffixHash: true
