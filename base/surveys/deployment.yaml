@@ -21,6 +21,8 @@ spec:
                 name: surveys-secret
             - secretRef:
                 name: db-secret
+            - secretRef:
+                name: oauth-secret
           image: iad.ocir.io/idwwmbyiyhww/meta-ms-surveys:latest
           ports:
             - containerPort: 3000
