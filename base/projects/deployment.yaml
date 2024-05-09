@@ -23,6 +23,8 @@ spec:
                 name: db-secret
             - secretRef:
                 name: minio-secret
+            - secretRef:
+                name: oauth-secret
           image: iad.ocir.io/idwwmbyiyhww/meta-ms-projects:latest
           ports:
             - containerPort: 3000
