@@ -22,7 +22,7 @@ spec:
             - secretRef:
                 name: db-secret
             - secretRef:
-                name: url-secret    
+                name: organization-secret    
           image: iad.ocir.io/idwwmbyiyhww/meta-ms-organization:latest
           ports:
             - containerPort: 3000
