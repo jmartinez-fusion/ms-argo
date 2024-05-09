@@ -24,7 +24,7 @@ spec:
             - secretRef:
                 name: mail-secret
             - secretRef:
-                name: url-secret
+                name: auth-secret
             - secretRef:
                 name: oauth-secret
           image: iad.ocir.io/idwwmbyiyhww/meta-ms-auth:latest

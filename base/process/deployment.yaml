@@ -18,11 +18,15 @@ spec:
         - name: ms-process
           envFrom:
             - secretRef:
-                name: process-secret
+                name: url-secret
             - secretRef:
                 name: db-secret
             - secretRef:
                 name: minio-secret
+            - secretRef:
+                name: oauth-secret
+            - secretRef:
+                name: file-secret
           image: iad.ocir.io/idwwmbyiyhww/meta-ms-process:latest
           ports:
             - containerPort: 3000
