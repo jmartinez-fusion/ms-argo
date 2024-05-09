@@ -5,9 +5,6 @@ secretGenerator:
   - name: auth-secret
     envs:
       - env.properties
-  - name: db-secret
-    envs:
-      - db.env
   - name: minio-secret
     envs:
       - minio.env
