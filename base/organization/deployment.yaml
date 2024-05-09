@@ -18,9 +18,11 @@ spec:
         - name: ms-organization
           envFrom:
             - secretRef:
-                name: organization-secret
+                name: oauth-secret
             - secretRef:
                 name: db-secret
+            - secretRef:
+                name: url-secret    
           image: iad.ocir.io/idwwmbyiyhww/meta-ms-organization:latest
           ports:
             - containerPort: 3000
