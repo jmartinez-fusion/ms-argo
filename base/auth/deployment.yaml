@@ -18,15 +18,7 @@ spec:
         - name: ms-auth
           envFrom:
             - secretRef:
-                name: jwt-secret
-            - secretRef:
-                name: db-secret
-            - secretRef:
-                name: mail-secret
-            - secretRef:
                 name: auth-secret
-            - secretRef:
-                name: oauth-secret
           image: iad.ocir.io/idwwmbyiyhww/meta-ms-auth:latest
           ports:
             - containerPort: 3000
