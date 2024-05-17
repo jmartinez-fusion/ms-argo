@@ -6,3 +6,4 @@ resources:
   - service.yaml
   - sealedSecret.yaml
   - oci-registry.yaml
+  - ingress.yaml

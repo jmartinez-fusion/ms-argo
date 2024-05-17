@@ -1,0 +1,17 @@
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: organization 
+  namespace: meta-ms
+
+spec:
+  entryPoints:
+    - web
+
+  routes:
+  - match: Host(`organization.cmstg.metaformers.com`) && PathPrefix(`/`)
+    kind: Rule
+    services:
+    - name: ms-organization
+      port: 3000
+
