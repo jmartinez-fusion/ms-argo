@@ -13,5 +13,5 @@ spec:
     kind: Rule
     services:
     - name: ms-spa
-      port: 3000
+      port: 8080
 
